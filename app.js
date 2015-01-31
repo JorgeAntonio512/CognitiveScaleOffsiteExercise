@@ -8,6 +8,7 @@ var express = require('express')
   , user = require('./routes/user')
   , http = require('http')
   , path = require('path')
+  , favicon = require('favicon')
   , bodyParser = require('body-parser')
   , logger = require('express-logger')
   , methodOverride = require('method-override');

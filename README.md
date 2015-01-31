@@ -1,20 +1,16 @@
-# MEAN Stack Single Page Application Starter
+George A Pazdral's Offsite Exericse for Cognitive Scale
+-------------------------------------------------------
 
-This is a repo for a starter appliation for a Single Page MEAN Stack application. Just download and install and you have a good foundation for building application. 
+This program has two functions:
 
-## Installation
-1. Download the repository
-2. Install npm modules: `npm install`
-3. Install bower dependencies `bower install`
-4. Start up the server: `node server.js`
-5. View in browser at http://localhost:8080
+1) when you input and submit a string, the output will
+be different colored blocks. The string can only be
+twelve characters long.
 
-Use this starter kit to build any MEAN stack application you like.
+2) the string is saved to MongoDB, and is placed at the
+bottom of the webpage. The search box function on the 
+webpage allows a user to see the cumulative total of any
+character that has been input and submitted.
 
-If you have any questions or requests, email us at [chris@scotch.io](mailto:chris@scotch.io) and we'll keep updating this to make it perfect.
 
-## Future Additions
-- CRUD examples
-- Development and Production Environments
-- Link examples
-- Single Page AngularJS Animations
+Stay tuned for a link to the working webpage. 

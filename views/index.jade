@@ -1,0 +1,56 @@
+extends layout
+
+block head
+  link(rel='stylesheet', href='/javascripts/vendor/bootstrap-css/css/bootstrap.css')
+
+  script(type='text/javascript', src='/javascripts/controllers/TodoListController.js')
+  script(type='text/javascript', src='/javascripts/controllers/onSubmit.js')
+  script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+  script(type='text/javascript', src='/javascripts/controllers/WordCount.js')
+
+block content
+  div.container(ng-controller="TodoListController", ng-init="setTodos( #{JSON.stringify(todos)} )")
+    h1 Colored Shape Output & Character Output Counter
+    form(novalidate, ng-submit="addNewTodo()")
+      textarea( ng-model="newTodo.description",
+                placeholder="Enter some text",
+                id="configname",
+                maxlength="12")
+                br
+      button.btn.btn-primary(type="submit", onclick="onLoadConfigPress(document.getElementById('configname').value)") Press Me
+      br
+      center
+    canvas#myCanvas(width='1200', height='200')
+      datepicker(ng-model="newTodo.due")
+    label
+      | Enter a 
+      em character
+      |  to search for: 
+      input#gmWordInp(type='text', value='')  
+    html
+      body
+        span#gmWordCount
+        br
+    h2 Current Output:
+    div
+      div.row.todo.not-done(ng-repeat="todo in todos | filter:notDoneFilter")
+        div.span9
+            | {{todo.description}}
+    h2 Done
+    div
+      div.row.todo.done(ng-repeat="todo in todos | filter:doneFilter")
+        div.span9
+          label.checkbox
+            input(type="checkbox", ng-model="todo.done", ng-change="update(todo)")
+            del {{todo.description}}
+        div.span3.text-right
+          i {{todo.due | date:'MMM d, yyyy'}}
+
+
+    
+
+
+
+          
+
+

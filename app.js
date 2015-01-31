@@ -16,7 +16,8 @@ var express = require('express')
 var app = express();
 
 var Mongoose = require('mongoose');
-var db = Mongoose.createConnection('localhost', 'mytestapp');
+var db = mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/mytestpp');
+
 
 var TodoSchema = require('./models/Todo.js').TodoSchema;
 var Todo = db.model('todos', TodoSchema);
